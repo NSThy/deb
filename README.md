@@ -25,6 +25,7 @@ exit
 ```
 sudo pip install PySocks colorama distro polib xxhash Sphinx semantic-version Send2Trash psutil Pillow mutagen pyinstaller icoextract altgraph crccheck pltable google-translate-for-goldendict
 ```
+
 4. install wine32
 ```
 /usr/local/share/wine/pkg32.sh install wine wine-gecko mesa-dri
@@ -46,8 +47,8 @@ sudo sed -i '' 's/wine64/wine/g' /usr/local/share/applications/wine32.desktop
 sudo sed -i '' 's/Wine /Wine32 /g' /usr/local/share/applications/wine32.desktop
 ```
 configure  
-install win7 fonts
-install .net 4
+install win7 fonts  
+install .net 4  
 ln -s ~/Downloads ~/.wine/drive_c/users/$USER/Favorites/
 
 5.enbale linux-c7,my package freefilesync and motrix need it
