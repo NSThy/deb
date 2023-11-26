@@ -4,7 +4,7 @@ here is my freebsd 14 envirment setup,with this setup i am sure all packages wor
 ```
 sudo pkg ins android-tools liblz4 unrar libnotify 7-zip exfat-utils qt5 qt6 neofetch git cmake wget fakeroot dpkg mkvalidator mkclean libheif protobuf grpc mbedtls libimobiledevice usbmuxd fusefs-ifuse fusefs-ntfs fusefs-ext2 fusefs-exfat fusefs-smbnetfs vim wx32-gtk3 yarn glx-utils pciutils usbutils libva-utils pkgconf gmake meson gcc13 boost-all libplist help2man autoconf m4 jq gettext openssl sqlite3 rpm4 ja-eb libzim xapian-core R-cran-hunspell lzo2 zh-opencc libvorbis py39-python-xlib py39-ipython
 ```
-2.switch frome python3.9 to python3.11,because python3.11 is not complete in offical repo
+2.switch from python3.9 to python3.11,because python3.11 is not complete in offical repo
 ```
 su
 
