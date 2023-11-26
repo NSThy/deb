@@ -2,7 +2,7 @@
 here is my freebsd 14 envirment setup,with this setup i am sure all packages work  
 1.install some basic depends
 ```
-sudo pkg ins android-tools liblz4 unrar libnotify 7-zip exfat-utils qt5 qt6 neofetch git cmake wget fakeroot dpkg mkvalidator mkclean libheif protobuf grpc mbedtls libimobiledevice usbmuxd fusefs-ifuse fusefs-ntfs fusefs-ext2 fusefs-exfat fusefs-smbnetfs vim wx32-gtk3 yarn glx-utils pciutils usbutils libva-utils pkgconf gmake meson gcc13 boost-all libplist help2man autoconf m4 jq gettext openssl sqlite3 rpm4 ja-eb libzim xapian-core R-cran-hunspell lzo2 zh-opencc libvorbis py39-python-xlib py39-ipython
+sudo pkg ins android-tools liblz4 unrar libnotify 7-zip exfat-utils qt5 qt6 neofetch git cmake wget fakeroot dpkg mkvalidator mkclean libheif protobuf grpc mbedtls libimobiledevice usbmuxd fusefs-ifuse fusefs-ntfs fusefs-ext2 fusefs-exfat fusefs-smbnetfs vim wx32-gtk3 yarn glx-utils pciutils usbutils libva-utils pkgconf gmake meson gcc13 boost-all libplist help2man autoconf m4 jq gettext openssl sqlite3 rpm4 ja-eb libzim xapian-core R-cran-hunspell lzo2 zh-opencc libvorbis py39-python-xlib py39-ipython wine wine-gecko
 ```
 2.switch from python3.9 to python3.11,because python3.11 is not complete in offical repo
 ```
@@ -25,7 +25,32 @@ exit
 ```
 sudo pip install PySocks colorama distro polib xxhash Sphinx semantic-version Send2Trash psutil Pillow mutagen pyinstaller icoextract altgraph crccheck pltable google-translate-for-goldendict
 ```
-4.enbale linux-c7,my package freefilesync and motrix need it
+4. install wine32
+```
+/usr/local/share/wine/pkg32.sh install wine wine-gecko mesa-dri
+```
+log out or reboot
+```
+echo "export WINEARCH=win32" >> ~/.profile
+```
+run winecfg once
+```
+winecfg
+```
+fix application  
+```
+sudo cp /usr/local/share/applications/wine.desktop /usr/local/share/applications/wine64.desktop
+sudo sed -i '' 's/Wine /Wine64 /g' /usr/local/share/applications/wine64.desktop
+sudo cp /usr/local/share/applications/wine.desktop /usr/local/share/applications/wine32.desktop
+sudo sed -i '' 's/wine64/wine/g' /usr/local/share/applications/wine32.desktop
+sudo sed -i '' 's/Wine /Wine32 /g' /usr/local/share/applications/wine32.desktop
+```
+configure  
+install win7 fonts
+install .net 4
+ln -s ~/Downloads ~/.wine/drive_c/users/$USER/Favorites/
+
+5.enbale linux-c7,my package freefilesync and motrix need it
 ```
 sudo sysrc linux_enable="YES"
 sudo service linux start
