@@ -5,4 +5,4 @@ install a tool
 https://github.com/NSThy/dpkgfreebsd  
 
 # INSTALL
-dpkgforce *.deb
+sudo dpkgfreebsd *.deb
